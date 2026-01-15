@@ -16,7 +16,7 @@
 # limitations under the License.
 
 # Stage 1: Build the Next.js application
-FROM node:20.18-alpine AS builder
+FROM node:20.20.0-alpine AS builder
 
 # Install pnpm
 RUN npm install -g pnpm
@@ -48,7 +48,7 @@ ENV NEXT_PUBLIC_ROOT_URI=$NEXT_PUBLIC_ROOT_URI
 RUN pnpm run build
 
 # Stage 2: Run the Next.js application in production
-FROM node:20.18-alpine AS runner
+FROM node:20.20.0-alpine AS runner
 
 # Install pnpm
 RUN npm install -g pnpm
